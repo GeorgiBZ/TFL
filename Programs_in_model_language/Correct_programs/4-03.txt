@@ -1,0 +1,10 @@
+program
+var int i , j , k , l , m , n
+begin
+i as 100101B ;
+j as 5363537O ;
+k as 9999944D ;
+l as 748abcdefH ;
+m as 123E-123 ;
+n as .453E123
+end.

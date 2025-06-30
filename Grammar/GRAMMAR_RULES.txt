@@ -1,0 +1,71 @@
+PR --> program var DESCR_GROUP begin OPER_GROUP end.
+
+DESCR_GROUP --> DESCR ; DESCR_GROUP | DESCR
+
+DESCR --> int ID_GROUP | float ID_GROUP | bool ID_GROUP
+
+ID_GROUP --> ID , ID_GROUP | ID
+
+OPER_GROUP --> OPER ; OPER_GROUP | OPER
+
+OPER -->  [OPER COMPOUND_OPER] |
+          if COMPARE then OPER |
+          if COMPARE then OPER else OPER |
+          while COMPARE do OPER |
+          for ID as COMPARE to COMPARE do OPER |
+          read(READ) |
+          write(WRITE) |
+          ID as COMPARE
+
+COMPOUND_OPER --> : OPER COMPOUND_OPER | \n OPER COMPOUND_OPER
+                  : OPER | \n OPER
+
+READ --> ID_GROUP
+
+WRITE --> COMPARE | WRITE , COMPARE
+
+COMPARE --> ADD | COMPARE=ADD | COMPARE>ADD |
+            COMPARE<ADD | COMPARE>=ADD | COMPARE<=ADD |
+            COMPARE<>ADD
+
+ADD --> MULT | ADD + MULT | ADD - MULT | ADD or MULT
+
+MULT --> FACT | MULT/FACT | MULT*FACT | MULT and FACT
+
+FACT --> ID | NUM | LOG | not FACT | (COMPARE)
+
+ID --> CH | ID CH | ID DIGIT
+
+NUM --> INT | REAL
+
+LOG -->true | false
+
+INT --> BIN | OCT | DEC | HEX
+
+BIN --> BIN1 B | BIN1 b
+
+BIN1 --> 0 | 1
+
+OCT --> OCT1 O | OCT1 o
+
+OCT1 --> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7
+
+DEC --> DIGIT1 D | DIGIT1 d | DIGIT1
+
+DIGIT1 --> DIGIT | DIGIT1 DIGIT
+
+HEX --> HEX1 H | HEX1 h
+
+HEX1 --> DIGIT | HEX1 DIGIT | HEX1 CH1
+
+CH1 --> a | b | c | d | e | f | A | B | C | D | E | F
+
+REAL --> DIGIT1 POR | DIGIT1.DIGIT1 POR | .DIGIT1 POR | .DIGIT1 | DIGIT1.DIGIT1
+
+POR --> E+DIGIT1 | E-DIGIT1 | e+DIGIT1 | e-DIGIT1 | E DIGIT1 | e DIGIT
+
+DIGIT --> 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+CH --> a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z |
+       A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U |
+       V | W | X | Y | Z

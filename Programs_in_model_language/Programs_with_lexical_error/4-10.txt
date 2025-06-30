@@ -1,0 +1,5 @@
+program
+var int i , j , k , l , m , n
+begin
+write ( 3 ) ; }
+end.

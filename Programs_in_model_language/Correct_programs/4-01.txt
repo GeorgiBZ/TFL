@@ -1,0 +1,9 @@
+program
+var int i , j
+begin
+read ( i ) ;
+read ( j ) ;
+if ( i > j )
+then write ( true )
+else write ( false )
+end.

@@ -1,0 +1,53 @@
+P --> program D1 B
+
+D1 --> var D D11
+
+D11 --> ; D D11 | 𝜀
+
+D --> int ID1 | float ID1 | bool ID1
+
+ID1 --> ID ID11
+
+ID11 --> , ID ID11 | 𝜀
+
+B --> begin S1 end.
+
+S1 --> S S11
+
+S11 --> ; S S11 | 𝜀
+
+S --> ID as E|
+    if E then S [ else S]
+    for ID as E to E do S
+    while E do S
+    read «(» ID1 «)»
+    write «(» EW «)»
+    «[» SC «]»
+
+EW --> E EW1
+
+EW1 --> , E EW1 | 𝜀
+
+SC --> S SC1
+
+SC1 --> : S SC1 | S SC1 | 𝜀
+
+E --> E1 E11
+
+E11 --> <> E1 E11| = E1 E11| < E1 E11| <= E1 E11| > E1 E11| >= E1 E11 | 𝜀
+
+E1 --> T T1
+
+T1 --> + T T1| - T T1| or T T1 | 𝜀
+
+T --> F F1
+
+F1 --> * F F1| / F F1| and F F1| 𝜀
+
+F --> ID | NUMBER | true | false | not F | «(» E «)»
+
+
+
+
+
+

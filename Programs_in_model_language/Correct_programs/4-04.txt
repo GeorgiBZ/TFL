@@ -1,0 +1,5 @@
+program
+var int n
+begin
+n as .453E123 { i as not program var end. }
+end.

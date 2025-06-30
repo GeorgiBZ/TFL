@@ -1,0 +1,5 @@
+program
+var int i
+begin
+i as 123adfhTH
+end.

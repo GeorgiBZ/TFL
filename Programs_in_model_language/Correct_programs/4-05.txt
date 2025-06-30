@@ -1,0 +1,10 @@
+program
+var
+int i , j , k , l , m
+begin
+i as 10e10 ;
+j as .5 ;
+k as .314e+1 ;
+l as 2.718281828 ;
+m as 0.777e4
+end.

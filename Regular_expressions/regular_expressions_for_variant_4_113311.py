@@ -1,0 +1,52 @@
+import re
+
+keywords = (r'^or$|'
+            r'^and$|'
+            r'^not$|'
+            r'^true$|'
+            r'^false$|'
+            r'^program$|'
+            r'^var$|'
+            r'^begin$|'
+            r'^end.$|'
+            r'^int$|'
+            r'^float$|'
+            r'^bool$|'
+            r'^as$|'
+            r'^if$|'
+            r'^then$|'
+            r'^else$|'
+            r'^for$|'
+            r'^to$|'
+            r'^do$|'
+            r'^while$|'
+            r'^read$|'
+            r'^write$')
+
+separators = (r'^<>$|'
+              r'^=$|'
+              r'^<$|'
+              r'^<=$|'
+              r'^>$|'
+              r'^>=$|'
+              r'^\+$|'
+              r'^-$|'
+              r'^\*$|'
+              r'^/$|'
+              r'^\($|'
+              r'^\)$|'
+              r'^;$|'
+              r'^,$|'
+              r'^\[$|'
+              r'^\]$|'
+              r'^\:$|'
+              r'^\{$|'
+              r'^\}$')
+
+identifier = (r'^[a-zA-Z][a-zA-Z0-9]*$')
+
+number = (r'^[0-1]+(B|b)$|'
+          r'^[0-7]+(O|o)$|'
+          r'^[0-9]+(D|d)?$|'
+          r'^\d[0-9A-Fa-f]*(H|h)$|'
+          r'^\d+(E|e)(\+|-)?\d+$|^(?:\d+)?\.\d+(E|e)(\+|-)?\d+$')

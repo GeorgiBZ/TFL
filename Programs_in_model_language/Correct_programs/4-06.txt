@@ -1,0 +1,8 @@
+program
+var
+int i , j ;
+float k , l ;
+bool m , n
+begin
+read ( i , j , k , l , m , n )
+end.

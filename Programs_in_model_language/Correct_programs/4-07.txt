@@ -1,0 +1,11 @@
+program
+var
+int i
+begin
+read ( i ) ;
+if ( i  >= 18 ) and ( i <= 100 )
+then
+    write ( true )
+else
+    write ( false )
+end.
